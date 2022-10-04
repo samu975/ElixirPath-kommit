@@ -1,6 +1,6 @@
-defmodule KV do
+defmodule DungeonCrawl do
   @moduledoc """
-  Documentation for `KV`.
+  Documentation for `DungeonCrawl`.
   """
 
   @doc """
@@ -8,7 +8,7 @@ defmodule KV do
 
   ## Examples
 
-      iex> KV.hello()
+      iex> DungeonCrawl.hello()
       :world
 
   """
