@@ -10,12 +10,12 @@ defmodule DungeonCrawl.Cli.HeroChoice do
 
     heroes
     |> Enum.map(&(&1.name))
-    |> display_options
-    |> generate_question
-    |> Shell.prompt
-    |> parse_answer
+    |> display_options()
+    |> generate_question()
+    |> Shell.prompt()
+    |> parse_answer()
     |> find_hero_by_index.()
-    |> confirm_hero
+    |> confirm_hero()
   end
 
   def display_options(options) do
