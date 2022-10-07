@@ -3,5 +3,8 @@ defmodule HelloWeb.LayoutView do
 
   # Phoenix LiveDashboard is available only in development by default,
   # so we instruct Elixir to not warn if the dashboard route is missing.
+  def title() do
+    "Awesome New Title!"
+  end
   @compile {:no_warn_undefined, {Routes, :live_dashboard_path, 2}}
 end
