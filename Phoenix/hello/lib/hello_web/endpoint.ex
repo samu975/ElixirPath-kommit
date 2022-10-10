@@ -57,7 +57,6 @@ defmodule HelloWeb.Endpoint do
     Host: #{inspect(conn.host)}
     Headers: #{inspect(conn.req_headers)}
     """
-
     conn
   end
 end
