@@ -1,5 +1,6 @@
 defmodule DungeonCrawl.Cli.HeroChoice do
   alias Mix.Shell.IO, as: Shell
+  import DungeonCrawl.Cli.BaseCommands
 
   def start do
     Shell.cmd("clear")
@@ -18,23 +19,10 @@ defmodule DungeonCrawl.Cli.HeroChoice do
     |> confirm_hero()
   end
 
-  def display_options(options) do
-    options
-    |> Enum.with_index(1)
-    |> Enum.each(fn {option, index} ->
-      Shell.info("#{index} - #{option}")
-    end)
-    options
-  end
-
-  defp generate_questions(options) do
-    options = Enum.join(1..Enum.count(options),",")
-    "Which one? [#{options}]\n"
-  end
-
-  defp parse_answer(answer) do
-    {option, _} = Integer.parse(answer)
-    option - 1
+  defp confirm_hero(chosen_hero) do
+    Shell.cmd("clear")
+    Shell.info(chosen_hero.description)
+    if Shell.yes?("Confirm??"), do: chosen_hero, else: start()
   end
 
 end
